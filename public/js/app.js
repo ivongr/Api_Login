@@ -118,4 +118,40 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+
+    
+    // Manejador para el formulario de registro
+    const cerrarboton = document.getElementById('cerrarboton');
+    if (cerrarboton) {
+        cerrarboton.addEventListener('click', async function(event) {
+            event.preventDefault();
+
+            try {
+                const response = await fetch('http://127.0.0.1:8000/api/logout', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${localStorage.getItem('token')}` // Enviar el token
+                    }
+                });
+        
+                if (response.ok) {
+                    const data = await response.json();
+                    alert(data.message);
+                    localStorage.removeItem('token');
+                    localStorage.removeItem('user_name');
+                  // Redirigir a la vista de bienvenida
+                  window.location.href = '/logout'; // Redirigir a la vista de cierre de sesión
+                } else {
+                    // Si el contenido no es JSON, puede ser un error HTML
+                    const text = await response.text();
+                    console.error('Error:', text);
+                    alert('Error al cerrar sesión');
+                }
+            } catch (error) {
+        
+                alert('Error al conectar con el servidor');
+            }
+        });
+    }
 });

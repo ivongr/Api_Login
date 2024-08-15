@@ -59,11 +59,6 @@
         </div>
     </section>
 
-    <div id="welcomeMessage" class="mt-3" style="display: none;">
-        <h2 id="message"></h2>
-    </div>
-    </div>
-
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 </body>
