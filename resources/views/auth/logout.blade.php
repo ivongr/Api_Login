@@ -11,9 +11,9 @@
 
 </head>
 
-<body>
+<body class="body_cerrar">
 
-    <section class="ftco-section d-flex align-items-center" style="height: 100vh;">
+    <section class="ftco-section d-flex align-items-center" style="height: 4000vh;">
         <div class="container text-center">
 
             <h1 class="heading-section text-danger">

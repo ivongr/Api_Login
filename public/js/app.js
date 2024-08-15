@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     // Manejador para el formulario de inicio de sesión
     const loginForm = document.getElementById('inicioformulario');
@@ -155,3 +156,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
