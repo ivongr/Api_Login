@@ -26,6 +26,11 @@ class AuthViewController extends Controller
         return view('auth.welcome');
     }
 
+    public function showlistPage()
+    {
+        return view('auth.list');
+    }
+
     //Vista Cerrar sesión
     public function showLogoutPage()
     {

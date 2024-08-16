@@ -57,7 +57,6 @@ class AuthController extends Controller
         ]);
     }
 
-
     //cerrar sesión
     public function logout(Request $request)
     {
@@ -66,6 +65,18 @@ class AuthController extends Controller
         return [
             'message' => 'Sesión terminada'
         ];
+    }
 
+    public function index()
+    {
+        //DEVOLVER TODAS LOS USUARIOS DE LA API
+
+        return User::all();
+    }
+
+    public function show(User $user)
+    {
+        //devolver la info de los usuarios
+        return $user;
     }
 }

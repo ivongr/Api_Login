@@ -6,8 +6,12 @@ use App\Http\Controllers\AuthController;
 
 //Las rutas de la API para consultar las funciones en postman
 
+
+//Apiresource (método) importa los recuersos del controlador 
+Route::apiResource('users', AuthController::class);
+
 //Publicar una solicitud
-Route::post('/register',[AuthController::class,'register']);
+Route::post('/register', [AuthController::class, 'register']);
 
 // Ruta para el manejo de la autenticación
 Route::post('/login', [AuthController::class, 'login']);
@@ -15,5 +19,3 @@ Route::post('/login', [AuthController::class, 'login']);
 //proteger la ruta con middleware sanctum
 // Ruta para cerrar sesión
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout')->middleware('auth:sanctum');
-
-
